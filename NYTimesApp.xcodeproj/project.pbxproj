@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B05C5FA4292549D100B1637C /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05C5FA2292549D100B1637C /* ArticleTableViewCell.swift */; };
+		B05C5FA5292549D100B1637C /* ArticleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B05C5FA3292549D100B1637C /* ArticleTableViewCell.xib */; };
 		B099B7592925237C003E54BF /* ArticlesRequestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B099B7582925237C003E54BF /* ArticlesRequestResult.swift */; };
 		B099B75C29252BC3003E54BF /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B099B75B29252BC3003E54BF /* APIManager.swift */; };
 		B099B75E29252BF0003E54BF /* AlamofireAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B099B75D29252BF0003E54BF /* AlamofireAPIManager.swift */; };
@@ -26,6 +28,8 @@
 		0F00A207207A2CE7CB728B7E /* Pods-NYTimesApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYTimesApp.release.xcconfig"; path = "Target Support Files/Pods-NYTimesApp/Pods-NYTimesApp.release.xcconfig"; sourceTree = "<group>"; };
 		5260AB53A9F0FB895FCF4E79 /* Pods-NYTimesApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYTimesApp.debug.xcconfig"; path = "Target Support Files/Pods-NYTimesApp/Pods-NYTimesApp.debug.xcconfig"; sourceTree = "<group>"; };
 		81212197FCA268F7427FAC52 /* Pods_NYTimesApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NYTimesApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B05C5FA2292549D100B1637C /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
+		B05C5FA3292549D100B1637C /* ArticleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleTableViewCell.xib; sourceTree = "<group>"; };
 		B099B7582925237C003E54BF /* ArticlesRequestResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesRequestResult.swift; sourceTree = "<group>"; };
 		B099B75B29252BC3003E54BF /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		B099B75D29252BF0003E54BF /* AlamofireAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireAPIManager.swift; sourceTree = "<group>"; };
@@ -69,6 +73,15 @@
 				81212197FCA268F7427FAC52 /* Pods_NYTimesApp.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B05C5FA6292549D900B1637C /* ArticleTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				B05C5FA2292549D100B1637C /* ArticleTableViewCell.swift */,
+				B05C5FA3292549D100B1637C /* ArticleTableViewCell.xib */,
+			);
+			path = ArticleTableViewCell;
 			sourceTree = "<group>";
 		};
 		B099B75A29252383003E54BF /* Models */ = {
@@ -129,6 +142,7 @@
 			children = (
 				B0D525112925148700EE71D4 /* Main.storyboard */,
 				B0D525192925148900EE71D4 /* LaunchScreen.storyboard */,
+				B05C5FA6292549D900B1637C /* ArticleTableViewCell */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -193,6 +207,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B05C5FA5292549D100B1637C /* ArticleTableViewCell.xib in Resources */,
 				B0D5251B2925148900EE71D4 /* LaunchScreen.storyboard in Resources */,
 				B0D525182925148900EE71D4 /* Assets.xcassets in Resources */,
 				B0D525132925148700EE71D4 /* Main.storyboard in Resources */,
@@ -248,6 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B05C5FA4292549D100B1637C /* ArticleTableViewCell.swift in Sources */,
 				B099B75C29252BC3003E54BF /* APIManager.swift in Sources */,
 				B099B7592925237C003E54BF /* ArticlesRequestResult.swift in Sources */,
 				B099B76329253111003E54BF /* Article.swift in Sources */,
