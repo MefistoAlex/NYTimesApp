@@ -11,6 +11,8 @@
 		B05C5FA5292549D100B1637C /* ArticleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B05C5FA3292549D100B1637C /* ArticleTableViewCell.xib */; };
 		B05C5FA829254ADF00B1637C /* MostEmailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05C5FA729254ADF00B1637C /* MostEmailedViewController.swift */; };
 		B05C5FAD29256AEF00B1637C /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05C5FAC29256AEF00B1637C /* NewsViewModel.swift */; };
+		B05C5FB029257F7F00B1637C /* MostSharedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05C5FAF29257F7F00B1637C /* MostSharedViewController.swift */; };
+		B05C5FB229257FBD00B1637C /* MostViewedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05C5FB129257FBD00B1637C /* MostViewedViewController.swift */; };
 		B099B7592925237C003E54BF /* ArticlesRequestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B099B7582925237C003E54BF /* ArticlesRequestResult.swift */; };
 		B099B75C29252BC3003E54BF /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B099B75B29252BC3003E54BF /* APIManager.swift */; };
 		B099B75E29252BF0003E54BF /* AlamofireAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B099B75D29252BF0003E54BF /* AlamofireAPIManager.swift */; };
@@ -34,6 +36,8 @@
 		B05C5FA3292549D100B1637C /* ArticleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleTableViewCell.xib; sourceTree = "<group>"; };
 		B05C5FA729254ADF00B1637C /* MostEmailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostEmailedViewController.swift; sourceTree = "<group>"; };
 		B05C5FAC29256AEF00B1637C /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
+		B05C5FAF29257F7F00B1637C /* MostSharedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostSharedViewController.swift; sourceTree = "<group>"; };
+		B05C5FB129257FBD00B1637C /* MostViewedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostViewedViewController.swift; sourceTree = "<group>"; };
 		B099B7582925237C003E54BF /* ArticlesRequestResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesRequestResult.swift; sourceTree = "<group>"; };
 		B099B75B29252BC3003E54BF /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		B099B75D29252BF0003E54BF /* AlamofireAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireAPIManager.swift; sourceTree = "<group>"; };
@@ -96,6 +100,16 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		B05C5FAE29257F4A00B1637C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B05C5FA729254ADF00B1637C /* MostEmailedViewController.swift */,
+				B05C5FAF29257F7F00B1637C /* MostSharedViewController.swift */,
+				B05C5FB129257FBD00B1637C /* MostViewedViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		B099B75A29252383003E54BF /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,7 +169,7 @@
 			children = (
 				B0D525112925148700EE71D4 /* Main.storyboard */,
 				B0D525192925148900EE71D4 /* LaunchScreen.storyboard */,
-				B05C5FA729254ADF00B1637C /* MostEmailedViewController.swift */,
+				B05C5FAE29257F4A00B1637C /* Controllers */,
 				B05C5FA6292549D900B1637C /* ArticleTableViewCell */,
 			);
 			path = Views;
@@ -286,7 +300,9 @@
 				B099B76529253984003E54BF /* Constants.swift in Sources */,
 				B05C5FAD29256AEF00B1637C /* NewsViewModel.swift in Sources */,
 				B0D525162925148700EE71D4 /* NYTimesApp.xcdatamodeld in Sources */,
+				B05C5FB229257FBD00B1637C /* MostViewedViewController.swift in Sources */,
 				B0D5250C2925148700EE71D4 /* AppDelegate.swift in Sources */,
+				B05C5FB029257F7F00B1637C /* MostSharedViewController.swift in Sources */,
 				B0D5250E2925148700EE71D4 /* SceneDelegate.swift in Sources */,
 				B099B76129252DB1003E54BF /* NewsAPIService.swift in Sources */,
 			);

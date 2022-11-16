@@ -12,6 +12,7 @@ import UIKit
 final class MostEmailedViewController: UIViewController {
     private let disposeBag = DisposeBag()
     private let newsViewModel = NewsViewModel.shared
+    
     @IBOutlet var tableView: UITableView!
 
     override func viewDidLoad() {

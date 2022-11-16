@@ -12,7 +12,7 @@
         <!--Most Shared-->
         <scene sceneID="jKx-jc-DXc">
             <objects>
-                <viewController id="5cq-cb-vSF" sceneMemberID="viewController">
+                <viewController id="5cq-cb-vSF" customClass="MostSharedViewController" customModule="NYTimesApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qH8-Ux-kEr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -32,6 +32,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Most Shared" image="link" catalog="system" id="wOS-hQ-U1z"/>
+                    <connections>
+                        <outlet property="tableView" destination="sZh-35-QKw" id="wFg-Be-9jH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Bn-cs-omn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -91,7 +94,7 @@
         <!--Most Viewed-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MostEmailedViewController" customModule="NYTimesApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MostViewedViewController" customModule="NYTimesApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -111,6 +114,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Most Viewed" image="display" catalog="system" id="Hck-Wg-h5D"/>
+                    <connections>
+                        <outlet property="tableView" destination="GKZ-gd-pNa" id="NmN-p8-W50"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
