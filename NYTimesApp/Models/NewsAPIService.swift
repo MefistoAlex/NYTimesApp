@@ -6,11 +6,7 @@
 //
 
 import Foundation
-enum NewsCathegory: String {
-    case emailed = "https://api.nytimes.com/svc/mostpopular/v2/emailed/30.json"
-    case shared = "https://api.nytimes.com/svc/mostpopular/v2/shared/30.json"
-    case viewed = "https://api.nytimes.com/svc/mostpopular/v2/viewed/30.json"
-}
+
 
 protocol NewsAPIServiceProtocol {
     func getNewsByCategory(_ category: NewsCathegory, completion: @escaping (_ articles: [Article]?, _ error: Error?) -> Void)
