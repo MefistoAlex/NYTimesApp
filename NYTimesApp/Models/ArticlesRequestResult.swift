@@ -10,9 +10,9 @@ import Foundation
 struct ArticlesRequestResult: Encodable {
     let status: String
     let num_results: Int
-    let results: [Article]
+    let results: [IncomingArticle]
    
-    struct Article: Encodable {
+    struct IncomingArticle: Encodable {
         let url: String
         let title: String
         let abstract: String
