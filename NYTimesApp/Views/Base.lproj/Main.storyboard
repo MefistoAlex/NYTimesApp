@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
+        <!--Most Shared-->
         <scene sceneID="jKx-jc-DXc">
             <objects>
                 <viewController id="5cq-cb-vSF" sceneMemberID="viewController">
@@ -18,13 +18,13 @@
                         <viewLayoutGuide key="safeArea" id="eZP-KR-3Jb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="wOS-hQ-U1z"/>
+                    <tabBarItem key="tabBarItem" title="Most Shared" image="link" catalog="system" id="wOS-hQ-U1z"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Bn-cs-omn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-466" y="-345"/>
         </scene>
-        <!--Item 1-->
+        <!--Most Emailed-->
         <scene sceneID="IYP-mP-qTF">
             <objects>
                 <viewController id="RQD-Dy-GAd" sceneMemberID="viewController">
@@ -34,7 +34,7 @@
                         <viewLayoutGuide key="safeArea" id="5Mv-YL-OWe"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="X8B-Nf-l9L"/>
+                    <tabBarItem key="tabBarItem" title="Most Emailed" image="mail" catalog="system" id="X8B-Nf-l9L"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dXl-U2-ugt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -60,7 +60,7 @@
             </objects>
             <point key="canvasLocation" x="-2257" y="113"/>
         </scene>
-        <!--Item-->
+        <!--Most Viewed-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="NYTimesApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -70,13 +70,13 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="Hck-Wg-h5D"/>
+                    <tabBarItem key="tabBarItem" title="Most Viewed" image="display" catalog="system" id="Hck-Wg-h5D"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1309" y="342"/>
         </scene>
-        <!--Item-->
+        <!--Favorites-->
         <scene sceneID="toh-QD-9jz">
             <objects>
                 <viewController id="h6O-F7-F5O" sceneMemberID="viewController">
@@ -86,7 +86,7 @@
                         <viewLayoutGuide key="safeArea" id="9zY-BF-SOx"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="8zT-LR-672"/>
+                    <tabBarItem key="tabBarItem" title="Favorites" image="star.fill" catalog="system" id="8zT-LR-672"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B0U-KM-vBW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -94,6 +94,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="display" catalog="system" width="128" height="101"/>
+        <image name="link" catalog="system" width="128" height="124"/>
+        <image name="mail" catalog="system" width="128" height="93"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
