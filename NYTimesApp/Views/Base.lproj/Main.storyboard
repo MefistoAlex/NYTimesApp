@@ -15,8 +15,20 @@
                     <view key="view" contentMode="scaleToFill" id="qH8-Ux-kEr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="sZh-35-QKw">
+                                <rect key="frame" x="0.0" y="48" width="414" height="765"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="eZP-KR-3Jb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="eZP-KR-3Jb" firstAttribute="bottom" secondItem="sZh-35-QKw" secondAttribute="bottom" id="6jN-TE-ckl"/>
+                            <constraint firstItem="sZh-35-QKw" firstAttribute="leading" secondItem="eZP-KR-3Jb" secondAttribute="leading" id="CjQ-P1-IQN"/>
+                            <constraint firstItem="eZP-KR-3Jb" firstAttribute="trailing" secondItem="sZh-35-QKw" secondAttribute="trailing" id="igK-Lb-Aeq"/>
+                            <constraint firstItem="sZh-35-QKw" firstAttribute="top" secondItem="eZP-KR-3Jb" secondAttribute="top" id="nQx-aO-dtq"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Most Shared" image="link" catalog="system" id="wOS-hQ-U1z"/>
                 </viewController>
@@ -31,8 +43,20 @@
                     <view key="view" contentMode="scaleToFill" id="hy9-hg-FxT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Avu-IY-2KN">
+                                <rect key="frame" x="0.0" y="48" width="414" height="765"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="5Mv-YL-OWe"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5Mv-YL-OWe" firstAttribute="bottom" secondItem="Avu-IY-2KN" secondAttribute="bottom" id="SDM-c6-9EC"/>
+                            <constraint firstItem="Avu-IY-2KN" firstAttribute="leading" secondItem="5Mv-YL-OWe" secondAttribute="leading" id="YtA-JS-FG1"/>
+                            <constraint firstItem="Avu-IY-2KN" firstAttribute="top" secondItem="5Mv-YL-OWe" secondAttribute="top" id="dQ5-gv-urb"/>
+                            <constraint firstItem="5Mv-YL-OWe" firstAttribute="trailing" secondItem="Avu-IY-2KN" secondAttribute="trailing" id="g8N-sJ-W6e"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Most Emailed" image="mail" catalog="system" id="X8B-Nf-l9L"/>
                 </viewController>
@@ -67,8 +91,20 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="GKZ-gd-pNa">
+                                <rect key="frame" x="0.0" y="48" width="414" height="765"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="GKZ-gd-pNa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8XH-sa-9KN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="GKZ-gd-pNa" secondAttribute="bottom" id="QlH-5T-kwD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GKZ-gd-pNa" secondAttribute="trailing" id="flE-7f-vTx"/>
+                            <constraint firstItem="GKZ-gd-pNa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="pCi-1r-unp"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Most Viewed" image="display" catalog="system" id="Hck-Wg-h5D"/>
                 </viewController>
@@ -83,8 +119,20 @@
                     <view key="view" contentMode="scaleToFill" id="8uT-gX-6Ph">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="cz9-2R-xEV">
+                                <rect key="frame" x="0.0" y="48" width="414" height="765"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="9zY-BF-SOx"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9zY-BF-SOx" firstAttribute="trailing" secondItem="cz9-2R-xEV" secondAttribute="trailing" id="95a-Sf-g7T"/>
+                            <constraint firstItem="cz9-2R-xEV" firstAttribute="leading" secondItem="9zY-BF-SOx" secondAttribute="leading" id="cpJ-S0-Q20"/>
+                            <constraint firstItem="9zY-BF-SOx" firstAttribute="bottom" secondItem="cz9-2R-xEV" secondAttribute="bottom" id="uv5-0e-Dk9"/>
+                            <constraint firstItem="cz9-2R-xEV" firstAttribute="top" secondItem="9zY-BF-SOx" secondAttribute="top" id="xbu-OP-GNZ"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Favorites" image="star.fill" catalog="system" id="8zT-LR-672"/>
                 </viewController>
