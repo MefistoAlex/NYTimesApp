@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ybi-uZ-c0V">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,7 +13,7 @@
             <objects>
                 <viewController id="5cq-cb-vSF" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qH8-Ux-kEr">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="eZP-KR-3Jb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -29,7 +29,7 @@
             <objects>
                 <viewController id="RQD-Dy-GAd" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hy9-hg-FxT">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="5Mv-YL-OWe"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -65,7 +65,7 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="NYTimesApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -81,7 +81,7 @@
             <objects>
                 <viewController id="h6O-F7-F5O" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8uT-gX-6Ph">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="9zY-BF-SOx"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
