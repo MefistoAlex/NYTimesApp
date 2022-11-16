@@ -20,13 +20,15 @@ final class MostEmailedViewController: UIViewController {
         tableView.register(UINib(nibName: String(describing: ArticleTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: ArticleTableViewCell.self))
 
         newsViewModel.getNewsByCategory(.emailed)
-
-        newsViewModel.mostEmailed.subscribe { error in
-            print(error.debugDescription)
+        
+        newsViewModel.mostEmailed.subscribe { event in
+            if let error = event.error {
+                self.showErrorAlert(with: error)
+            }
         }.disposed(by: disposeBag)
-
-        newsViewModel.mostEmailed.bind(to:
-            tableView.rx.items(
+        
+        newsViewModel.mostEmailed.asDriver(onErrorJustReturn: [Article]())
+            .drive(tableView.rx.items(
                 cellIdentifier: String(describing: ArticleTableViewCell.self),
                 cellType: ArticleTableViewCell.self)) { _, article, cell in
             cell.setArticle(article)
