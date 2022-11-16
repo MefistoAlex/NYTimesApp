@@ -7,6 +7,9 @@ target 'NYTimesApp' do
 
 pod 'Alamofire'
 pod 'SDWebImage', '~> 5.0'
+
+pod 'RxSwift'
+pod 'RxCocoa'
   # Pods for NYTimesApp
 
 end
