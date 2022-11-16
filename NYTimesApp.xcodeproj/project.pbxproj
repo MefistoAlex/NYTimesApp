@@ -12,6 +12,7 @@
 		B099B75E29252BF0003E54BF /* AlamofireAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B099B75D29252BF0003E54BF /* AlamofireAPIManager.swift */; };
 		B099B76129252DB1003E54BF /* NewsAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B099B76029252DB1003E54BF /* NewsAPIService.swift */; };
 		B099B76329253111003E54BF /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = B099B76229253111003E54BF /* Article.swift */; };
+		B099B76529253984003E54BF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B099B76429253984003E54BF /* Constants.swift */; };
 		B0D5250C2925148700EE71D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D5250B2925148700EE71D4 /* AppDelegate.swift */; };
 		B0D5250E2925148700EE71D4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D5250D2925148700EE71D4 /* SceneDelegate.swift */; };
 		B0D525102925148700EE71D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D5250F2925148700EE71D4 /* ViewController.swift */; };
@@ -31,6 +32,7 @@
 		B099B75D29252BF0003E54BF /* AlamofireAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireAPIManager.swift; sourceTree = "<group>"; };
 		B099B76029252DB1003E54BF /* NewsAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAPIService.swift; sourceTree = "<group>"; };
 		B099B76229253111003E54BF /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		B099B76429253984003E54BF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B0D525082925148700EE71D4 /* NYTimesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NYTimesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0D5250B2925148700EE71D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0D5250D2925148700EE71D4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				B0D5250B2925148700EE71D4 /* AppDelegate.swift */,
+				B099B76429253984003E54BF /* Constants.swift */,
 				B0D5250D2925148700EE71D4 /* SceneDelegate.swift */,
 				B0D5250F2925148700EE71D4 /* ViewController.swift */,
 				B099B75A29252383003E54BF /* Models */,
@@ -253,6 +256,7 @@
 				B099B76329253111003E54BF /* Article.swift in Sources */,
 				B0D525102925148700EE71D4 /* ViewController.swift in Sources */,
 				B099B75E29252BF0003E54BF /* AlamofireAPIManager.swift in Sources */,
+				B099B76529253984003E54BF /* Constants.swift in Sources */,
 				B0D525162925148700EE71D4 /* NYTimesApp.xcdatamodeld in Sources */,
 				B0D5250C2925148700EE71D4 /* AppDelegate.swift in Sources */,
 				B0D5250E2925148700EE71D4 /* SceneDelegate.swift in Sources */,
