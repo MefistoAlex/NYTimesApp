@@ -60,6 +60,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Most Emailed" image="mail" catalog="system" id="X8B-Nf-l9L"/>
+                    <connections>
+                        <outlet property="tableView" destination="Avu-IY-2KN" id="1gD-Ej-Dic"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dXl-U2-ugt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

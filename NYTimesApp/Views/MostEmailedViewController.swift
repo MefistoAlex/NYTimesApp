@@ -5,25 +5,30 @@
 //  Created by Alexandr Mefisto on 16.11.2022.
 //
 
+import RxCocoa
+import RxSwift
 import UIKit
 
-class MostEmailedViewController: UIViewController {
+final class MostEmailedViewController: UIViewController {
+    private let disposeBag = DisposeBag()
+    private let newsViewModel = NewsViewModel.shared
+    @IBOutlet var tableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.register(UINib(nibName: String(describing: ArticleTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: ArticleTableViewCell.self))
 
-        // Do any additional setup after loading the view.
+        newsViewModel.getNewsByCategory(.emailed)
+
+        newsViewModel.mostEmailed.subscribe { error in
+            print(error.debugDescription)
+        }.disposed(by: disposeBag)
+
+        newsViewModel.mostEmailed.bind(to:
+            tableView.rx.items(
+                cellIdentifier: String(describing: ArticleTableViewCell.self),
+                cellType: ArticleTableViewCell.self)) { _, article, cell in
+            cell.setArticle(article)
+        }.disposed(by: disposeBag)
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
