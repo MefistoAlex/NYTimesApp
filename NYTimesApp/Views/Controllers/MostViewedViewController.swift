@@ -11,8 +11,8 @@ import UIKit
 final class MostViewedViewController: UIViewController {
     private let disposeBag = DisposeBag()
     private let newsViewModel = NewsViewModel.shared
-    
-    @IBOutlet weak var tableView: UITableView!
+
+    @IBOutlet var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,13 +20,17 @@ final class MostViewedViewController: UIViewController {
 
         newsViewModel.getNewsByCategory(.viewed)
 
+        newsViewModel.mostViewed.subscribe { event in
+            if let error = event.error {
+                self.showErrorAlert(with: error)
+            }
+        }.disposed(by: disposeBag)
 
-        newsViewModel.mostViewed.bind(to:
-            tableView.rx.items(
+        newsViewModel.mostViewed.asDriver(onErrorJustReturn: [Article]())
+            .drive(tableView.rx.items(
                 cellIdentifier: String(describing: ArticleTableViewCell.self),
                 cellType: ArticleTableViewCell.self)) { _, article, cell in
-            cell.setArticle(article)
-        }.disposed(by: disposeBag)
+                    cell.setArticle(article)
+            }.disposed(by: disposeBag)
     }
-
 }

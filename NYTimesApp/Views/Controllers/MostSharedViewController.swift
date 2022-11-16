@@ -20,11 +20,17 @@ final class MostSharedViewController: UIViewController {
 
         newsViewModel.getNewsByCategory(.shared)
 
-        newsViewModel.mostShared.bind(to:
-            tableView.rx.items(
+        newsViewModel.mostShared.subscribe { event in
+            if let error = event.error {
+                self.showErrorAlert(with: error)
+            }
+        }.disposed(by: disposeBag)
+
+        newsViewModel.mostShared.asDriver(onErrorJustReturn: [Article]())
+            .drive(tableView.rx.items(
                 cellIdentifier: String(describing: ArticleTableViewCell.self),
                 cellType: ArticleTableViewCell.self)) { _, article, cell in
-            cell.setArticle(article)
-        }.disposed(by: disposeBag)
+                    cell.setArticle(article)
+            }.disposed(by: disposeBag)
     }
 }
