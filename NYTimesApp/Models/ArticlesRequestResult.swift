@@ -7,19 +7,19 @@
 
 import Foundation
 
-struct ArticlesRequestResult: Encodable {
+struct ArticlesRequestResult: Decodable {
     let status: String
     let num_results: Int
     let results: [IncomingArticle]
    
-    struct IncomingArticle: Encodable {
+    struct IncomingArticle: Decodable {
         let url: String
         let title: String
         let abstract: String
         let media: [Media]
     }
 
-    struct Media: Encodable {
+    struct Media: Decodable {
         let metadata: [MediaMetaData]
 
         enum CodingKeys: String, CodingKey {
@@ -27,7 +27,7 @@ struct ArticlesRequestResult: Encodable {
         }
     }
 
-    struct MediaMetaData: Encodable {
+    struct MediaMetaData: Decodable {
         let url: String
     }
 }
