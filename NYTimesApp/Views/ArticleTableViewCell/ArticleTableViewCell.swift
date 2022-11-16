@@ -5,16 +5,17 @@
 //  Created by Alexandr Mefisto on 16.11.2022.
 //
 
+import SDWebImage
 import UIKit
 
 final class ArticleTableViewCell: UITableViewCell {
-//MARK: - Outlets
-    
-    @IBOutlet private weak var newsImageView: UIImageView!
-    @IBOutlet private weak var descriptionLabel: UILabel!
-    @IBOutlet private weak var titleLabel:
-    UILabel!
-    
+    // MARK: - Outlets
+
+    @IBOutlet private var newsImageView: UIImageView!
+    @IBOutlet private var descriptionLabel: UILabel!
+    @IBOutlet private var titleLabel:
+        UILabel!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -25,11 +26,12 @@ final class ArticleTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+
     func setArticle(_ article: Article) {
         titleLabel.text = article.title
         descriptionLabel.text = article.description
-        //TODO: add image loading from url
+        if let imageUrl = article.imageUrl {
+            newsImageView.sd_setImage(with: URL(string: imageUrl))
+        }
     }
-    
 }
