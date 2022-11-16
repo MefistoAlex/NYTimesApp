@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B099B7592925237C003E54BF /* ArticlesRequestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B099B7582925237C003E54BF /* ArticlesRequestResult.swift */; };
 		B0D5250C2925148700EE71D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D5250B2925148700EE71D4 /* AppDelegate.swift */; };
 		B0D5250E2925148700EE71D4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D5250D2925148700EE71D4 /* SceneDelegate.swift */; };
 		B0D525102925148700EE71D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D5250F2925148700EE71D4 /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 		0F00A207207A2CE7CB728B7E /* Pods-NYTimesApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYTimesApp.release.xcconfig"; path = "Target Support Files/Pods-NYTimesApp/Pods-NYTimesApp.release.xcconfig"; sourceTree = "<group>"; };
 		5260AB53A9F0FB895FCF4E79 /* Pods-NYTimesApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYTimesApp.debug.xcconfig"; path = "Target Support Files/Pods-NYTimesApp/Pods-NYTimesApp.debug.xcconfig"; sourceTree = "<group>"; };
 		81212197FCA268F7427FAC52 /* Pods_NYTimesApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NYTimesApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B099B7582925237C003E54BF /* ArticlesRequestResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesRequestResult.swift; sourceTree = "<group>"; };
 		B0D525082925148700EE71D4 /* NYTimesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NYTimesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0D5250B2925148700EE71D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0D5250D2925148700EE71D4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +63,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B099B75A29252383003E54BF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B099B7582925237C003E54BF /* ArticlesRequestResult.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		B0D524FF2925148700EE71D4 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +95,7 @@
 				B0D5250B2925148700EE71D4 /* AppDelegate.swift */,
 				B0D5250D2925148700EE71D4 /* SceneDelegate.swift */,
 				B0D5250F2925148700EE71D4 /* ViewController.swift */,
+				B099B75A29252383003E54BF /* Models */,
 				B0D525222925158200EE71D4 /* Views */,
 				B0D525172925148900EE71D4 /* Assets.xcassets */,
 				B0D5251C2925148900EE71D4 /* Info.plist */,
@@ -217,6 +228,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B099B7592925237C003E54BF /* ArticlesRequestResult.swift in Sources */,
 				B0D525102925148700EE71D4 /* ViewController.swift in Sources */,
 				B0D525162925148700EE71D4 /* NYTimesApp.xcdatamodeld in Sources */,
 				B0D5250C2925148700EE71D4 /* AppDelegate.swift in Sources */,
