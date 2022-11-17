@@ -11,7 +11,7 @@ struct ArticlesRequestResult: Decodable {
     let status: String
     let num_results: Int
     let results: [IncomingArticle]
-   
+
     struct IncomingArticle: Decodable {
         let url: String
         let title: String
