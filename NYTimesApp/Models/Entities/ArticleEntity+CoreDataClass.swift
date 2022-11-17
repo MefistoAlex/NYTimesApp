@@ -1,6 +1,6 @@
 //
 //  ArticleEntity+CoreDataClass.swift
-//  
+//  NYTimesApp
 //
 //  Created by Alexandr Mefisto on 17.11.2022.
 //

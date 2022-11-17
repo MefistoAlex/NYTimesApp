@@ -1,6 +1,6 @@
 //
 //  ArticleEntity+CoreDataProperties.swift
-//  
+//  NYTimesApp
 //
 //  Created by Alexandr Mefisto on 17.11.2022.
 //
@@ -20,5 +20,9 @@ extension ArticleEntity {
     @NSManaged public var descr: String?
     @NSManaged public var url: String?
     @NSManaged public var image: String?
+
+}
+
+extension ArticleEntity : Identifiable {
 
 }
