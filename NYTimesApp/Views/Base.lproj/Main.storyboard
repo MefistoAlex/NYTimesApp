@@ -91,6 +91,53 @@
             </objects>
             <point key="canvasLocation" x="-2257" y="113"/>
         </scene>
+        <!--Article View Controller-->
+        <scene sceneID="ih0-sG-wS7">
+            <objects>
+                <viewController storyboardIdentifier="ArticleViewController" id="gE1-rp-Ivr" customClass="ArticleViewController" customModule="NYTimesApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="knQ-CX-kDU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X2i-Id-JpU">
+                                <rect key="frame" x="0.0" y="92" width="414" height="770"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ZMl-cd-Fm2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="X2i-Id-JpU" firstAttribute="leading" secondItem="ZMl-cd-Fm2" secondAttribute="leading" id="2pw-e1-mZz"/>
+                            <constraint firstItem="X2i-Id-JpU" firstAttribute="top" secondItem="ZMl-cd-Fm2" secondAttribute="top" id="csa-XX-Ibr"/>
+                            <constraint firstItem="ZMl-cd-Fm2" firstAttribute="trailing" secondItem="X2i-Id-JpU" secondAttribute="trailing" id="eAu-8c-Gda"/>
+                            <constraint firstItem="ZMl-cd-Fm2" firstAttribute="bottom" secondItem="X2i-Id-JpU" secondAttribute="bottom" id="vBX-2k-An2"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Acw-nr-EcV">
+                        <barButtonItem key="leftBarButtonItem" title="&lt; back" style="done" id="Wbv-Ek-Mls">
+                            <connections>
+                                <action selector="backButtonDidTap:" destination="gE1-rp-Ivr" id="9Oq-Ic-vwH"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="star" catalog="system" id="vU5-id-Sgs">
+                            <connections>
+                                <action selector="favouriteButtonDidTap:" destination="gE1-rp-Ivr" id="9PV-vT-keb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="favouriteButton" destination="vU5-id-Sgs" id="IMh-EM-srw"/>
+                        <outlet property="webWiew" destination="X2i-Id-JpU" id="ckW-ii-fE0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m5J-Vz-Dmt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1082.608695652174" y="847.76785714285711"/>
+        </scene>
         <!--Most Viewed-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -120,7 +167,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1309" y="342"/>
+            <point key="canvasLocation" x="-400.00000000000006" y="341.51785714285711"/>
         </scene>
         <!--Favorites-->
         <scene sceneID="toh-QD-9jz">
@@ -148,13 +195,32 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B0U-KM-vBW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-466" y="342"/>
+            <point key="canvasLocation" x="443.47826086956525" y="341.51785714285711"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="jul-OP-jQX">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Vjd-kE-DdM" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zup-es-oJa">
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="gE1-rp-Ivr" kind="relationship" relationship="rootViewController" id="Ubw-iR-xEP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PGu-8X-UpA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1992.753623188406" y="847.76785714285711"/>
         </scene>
     </scenes>
     <resources>
         <image name="display" catalog="system" width="128" height="101"/>
         <image name="link" catalog="system" width="128" height="124"/>
         <image name="mail" catalog="system" width="128" height="93"/>
+        <image name="star" catalog="system" width="128" height="116"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

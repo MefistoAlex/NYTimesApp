@@ -13,12 +13,14 @@
 		B05C5FAD29256AEF00B1637C /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05C5FAC29256AEF00B1637C /* NewsViewModel.swift */; };
 		B05C5FB029257F7F00B1637C /* MostSharedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05C5FAF29257F7F00B1637C /* MostSharedViewController.swift */; };
 		B05C5FB229257FBD00B1637C /* MostViewedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05C5FB129257FBD00B1637C /* MostViewedViewController.swift */; };
+		B05C5FB4292585EC00B1637C /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05C5FB3292585EC00B1637C /* UIViewController+Extension.swift */; };
 		B099B7592925237C003E54BF /* ArticlesRequestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B099B7582925237C003E54BF /* ArticlesRequestResult.swift */; };
 		B099B75C29252BC3003E54BF /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B099B75B29252BC3003E54BF /* APIManager.swift */; };
 		B099B75E29252BF0003E54BF /* AlamofireAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B099B75D29252BF0003E54BF /* AlamofireAPIManager.swift */; };
 		B099B76129252DB1003E54BF /* NewsAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B099B76029252DB1003E54BF /* NewsAPIService.swift */; };
 		B099B76329253111003E54BF /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = B099B76229253111003E54BF /* Article.swift */; };
 		B099B76529253984003E54BF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B099B76429253984003E54BF /* Constants.swift */; };
+		B0A345112926344A00CF2994 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A345102926344A00CF2994 /* ArticleViewController.swift */; };
 		B0D5250C2925148700EE71D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D5250B2925148700EE71D4 /* AppDelegate.swift */; };
 		B0D5250E2925148700EE71D4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D5250D2925148700EE71D4 /* SceneDelegate.swift */; };
 		B0D525132925148700EE71D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0D525112925148700EE71D4 /* Main.storyboard */; };
@@ -38,12 +40,14 @@
 		B05C5FAC29256AEF00B1637C /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
 		B05C5FAF29257F7F00B1637C /* MostSharedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostSharedViewController.swift; sourceTree = "<group>"; };
 		B05C5FB129257FBD00B1637C /* MostViewedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostViewedViewController.swift; sourceTree = "<group>"; };
+		B05C5FB3292585EC00B1637C /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		B099B7582925237C003E54BF /* ArticlesRequestResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesRequestResult.swift; sourceTree = "<group>"; };
 		B099B75B29252BC3003E54BF /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		B099B75D29252BF0003E54BF /* AlamofireAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireAPIManager.swift; sourceTree = "<group>"; };
 		B099B76029252DB1003E54BF /* NewsAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAPIService.swift; sourceTree = "<group>"; };
 		B099B76229253111003E54BF /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		B099B76429253984003E54BF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B0A345102926344A00CF2994 /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
 		B0D525082925148700EE71D4 /* NYTimesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NYTimesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0D5250B2925148700EE71D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0D5250D2925148700EE71D4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +110,7 @@
 				B05C5FA729254ADF00B1637C /* MostEmailedViewController.swift */,
 				B05C5FAF29257F7F00B1637C /* MostSharedViewController.swift */,
 				B05C5FB129257FBD00B1637C /* MostViewedViewController.swift */,
+				B0A345102926344A00CF2994 /* ArticleViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -151,6 +156,7 @@
 		B0D5250A2925148700EE71D4 /* NYTimesApp */ = {
 			isa = PBXGroup;
 			children = (
+				B05C5FB3292585EC00B1637C /* UIViewController+Extension.swift */,
 				B0D5250B2925148700EE71D4 /* AppDelegate.swift */,
 				B099B76429253984003E54BF /* Constants.swift */,
 				B0D5250D2925148700EE71D4 /* SceneDelegate.swift */,
@@ -294,11 +300,13 @@
 				B05C5FA829254ADF00B1637C /* MostEmailedViewController.swift in Sources */,
 				B05C5FA4292549D100B1637C /* ArticleTableViewCell.swift in Sources */,
 				B099B75C29252BC3003E54BF /* APIManager.swift in Sources */,
+				B05C5FB4292585EC00B1637C /* UIViewController+Extension.swift in Sources */,
 				B099B7592925237C003E54BF /* ArticlesRequestResult.swift in Sources */,
 				B099B76329253111003E54BF /* Article.swift in Sources */,
 				B099B75E29252BF0003E54BF /* AlamofireAPIManager.swift in Sources */,
 				B099B76529253984003E54BF /* Constants.swift in Sources */,
 				B05C5FAD29256AEF00B1637C /* NewsViewModel.swift in Sources */,
+				B0A345112926344A00CF2994 /* ArticleViewController.swift in Sources */,
 				B0D525162925148700EE71D4 /* NYTimesApp.xcdatamodeld in Sources */,
 				B05C5FB229257FBD00B1637C /* MostViewedViewController.swift in Sources */,
 				B0D5250C2925148700EE71D4 /* AppDelegate.swift in Sources */,
