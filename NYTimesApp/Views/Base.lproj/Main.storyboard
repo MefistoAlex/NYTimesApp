@@ -172,7 +172,7 @@
         <!--Favorites-->
         <scene sceneID="toh-QD-9jz">
             <objects>
-                <viewController id="h6O-F7-F5O" sceneMemberID="viewController">
+                <viewController id="h6O-F7-F5O" customClass="FavouritesViewController" customModule="NYTimesApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8uT-gX-6Ph">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -192,6 +192,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Favorites" image="star.fill" catalog="system" id="8zT-LR-672"/>
+                    <connections>
+                        <outlet property="tableView" destination="cz9-2R-xEV" id="cUd-Rf-5cV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B0U-KM-vBW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
