@@ -5,9 +5,9 @@
 //  Created by Alexandr Mefisto on 16.11.2022.
 //
 
+import CoreData
 import Foundation
 import RxSwift
-import CoreData
 
 final class NewsViewModel {
     private let newsServise: NewsAPIServiceProtocol
@@ -17,37 +17,52 @@ final class NewsViewModel {
     var mostEmailed = PublishSubject<[Article]>()
     var mostShared = PublishSubject<[Article]>()
     var mostViewed = PublishSubject<[Article]>()
-    var favourites = PublishSubject<[Article]>()
-
+    var favourites = BehaviorSubject(value: [Article]())
     private init() {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         newsServise = NewsAPIService()
         managedObjectContext = appDelegate.persistentContainer.viewContext
     }
 
-    func addArticleToFavourites (_ article: Article) {
+    func addArticleToFavourites(_ article: Article) {
         let entity = ArticleEntity(context: managedObjectContext)
         entity.title = article.title
         entity.descr = article.description
         entity.url = article.url
         entity.image = article.imageUrl
-        
+
         do {
             try managedObjectContext.save()
+            getFavouriteNews()
         } catch {
             fatalError("Error in saving data")
         }
     }
+
+    func deleteArticleFromFavourites(_ article: Article) {
+        let request = ArticleEntity.fetchRequest()
+        request.predicate = NSPredicate(format: "url = %@", article.url as CVarArg)
+        do {
+            let result = try managedObjectContext.fetch(request)
+            managedObjectContext.delete(result.first!)
+            try managedObjectContext.save()
+            getFavouriteNews()
+        } catch {
+            favourites.onError(error)
+        }
+    }
+
     func getFavouriteNews() {
         let request = ArticleEntity.fetchRequest()
         do {
             let entities = try managedObjectContext.fetch(request)
-            let articles = entities.map{Article(entity: $0)}
+            let articles = entities.map { Article(entity: $0) }
             favourites.onNext(articles)
         } catch {
             favourites.onError(error)
         }
     }
+
     func getNewsByCategory(_ category: NewsCathegory) {
         newsServise.getNewsByCategory(category) { articles, error in
             if let articles {
@@ -69,7 +84,6 @@ final class NewsViewModel {
                     self.mostViewed.onError(error!)
                 }
             }
-            
         }
     }
 }
