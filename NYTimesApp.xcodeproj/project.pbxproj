@@ -48,6 +48,8 @@
 		B099B76229253111003E54BF /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		B099B76429253984003E54BF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B0A345102926344A00CF2994 /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
+		B0A3451529264DAF00CF2994 /* ArticleEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ArticleEntity+CoreDataClass.swift"; path = "NYTimesApp/Models/ArticleEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B0A3451629264DAF00CF2994 /* ArticleEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ArticleEntity+CoreDataProperties.swift"; path = "NYTimesApp/Models/ArticleEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B0D525082925148700EE71D4 /* NYTimesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NYTimesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0D5250B2925148700EE71D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0D5250D2925148700EE71D4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 		B099B75A29252383003E54BF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B0A3451729264DAF00CF2994 /* Entities */,
 				B099B75F29252CC4003E54BF /* API manager */,
 				B099B7582925237C003E54BF /* ArticlesRequestResult.swift */,
 				B099B76029252DB1003E54BF /* NewsAPIService.swift */,
@@ -133,6 +136,16 @@
 				B099B75D29252BF0003E54BF /* AlamofireAPIManager.swift */,
 			);
 			path = "API manager";
+			sourceTree = "<group>";
+		};
+		B0A3451729264DAF00CF2994 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				B0A3451529264DAF00CF2994 /* ArticleEntity+CoreDataClass.swift */,
+				B0A3451629264DAF00CF2994 /* ArticleEntity+CoreDataProperties.swift */,
+			);
+			name = Entities;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		B0D524FF2925148700EE71D4 = {
