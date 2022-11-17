@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Article {
+struct Article: Hashable {
     let title: String
     let description: String
     let url: String
@@ -17,15 +17,15 @@ struct Article {
         title = incomingArticle.title
         description = incomingArticle.abstract
         url = incomingArticle.url
-        //getting image with hight quality
+        // getting image with hight quality
         imageUrl = incomingArticle.media.last?.metadata.last?.url
     }
-    
+
     init(entity: ArticleEntity) {
         title = entity.title!
         description = entity.descr!
         url = entity.url!
-        //getting image with hight quality
+        // getting image with hight quality
         imageUrl = entity.image
     }
 }
