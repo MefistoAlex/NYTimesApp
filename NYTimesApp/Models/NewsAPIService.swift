@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 protocol NewsAPIServiceProtocol {
     func getNewsByCategory(_ category: NewsCathegory, completion: @escaping (_ articles: [Article]?, _ error: Error?) -> Void)
 }
@@ -33,7 +32,7 @@ class NewsAPIService: NewsAPIServiceProtocol {
                 }
                 completion(articles, nil)
             }
-            
+
             if let error {
                 completion(nil, error)
             }
