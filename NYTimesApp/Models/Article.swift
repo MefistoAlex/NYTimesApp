@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 struct Article {
     let title: String
     let description: String
@@ -18,5 +19,13 @@ struct Article {
         url = incomingArticle.url
         //getting image with hight quality
         imageUrl = incomingArticle.media.last?.metadata.last?.url
+    }
+    
+    init(entity: ArticleEntity) {
+        title = entity.title!
+        description = entity.descr!
+        url = entity.url!
+        //getting image with hight quality
+        imageUrl = entity.image
     }
 }
