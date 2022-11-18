@@ -12,4 +12,12 @@ extension UIViewController {
         alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Default action"), style: .destructive))
         present(alert, animated: true)
     }
+    
+    func presetnArticle(_ article: Article) {
+        let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: String(describing: ArticleViewController.self)) as! ArticleViewController
+        controller.setArticle(article)
+        let navigationControler = UINavigationController(rootViewController: controller)
+        navigationControler.modalPresentationStyle = .fullScreen
+        present(navigationControler, animated: true)
+    }
 }
