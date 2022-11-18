@@ -21,7 +21,6 @@ final class AlamofireAPIManager: APIManager {
 
         AF.request(urlString, method: HTTPMethod(rawValue: method.rawValue),
                    parameters: parameters,
-//                   encoder: <#T##ParameterEncoder#>,
                    headers: httpHeaders)
             .validate()
             .responseDecodable(of: T.self) { response in
