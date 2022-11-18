@@ -21,7 +21,7 @@ final class FavouritesViewController: NewsViewController {
     }
 
     // MARK: - Privates
-    
+
     override func tableBinding() {
         super.tableBinding()
         newsViewModel.favourites.asDriver(onErrorJustReturn: [Article]())
@@ -31,7 +31,7 @@ final class FavouritesViewController: NewsViewController {
                     cell.setArticle(article)
             }.disposed(by: disposeBag)
 
-        tableView.rx.modelDeleted(Article.self).asDriver().drive() { article in
+        tableView.rx.modelDeleted(Article.self).asDriver().drive { article in
             self.newsViewModel.deleteArticleFromFavourites(article)
         }.disposed(by: disposeBag)
     }
