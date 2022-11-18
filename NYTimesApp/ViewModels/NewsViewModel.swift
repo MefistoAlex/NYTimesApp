@@ -14,10 +14,21 @@ final class NewsViewModel {
     private let managedObjectContext: NSManagedObjectContext
     static let shared = NewsViewModel()
 
-    var mostEmailed = PublishSubject<[Article]>()
-    var mostShared = PublishSubject<[Article]>()
-    var mostViewed = PublishSubject<[Article]>()
-    var favourites = BehaviorSubject(value: [Article]())
+    var newsError: Observable<Error> { errorSubject }
+    private var errorSubject = PublishSubject<Error>()
+
+    var mostEmailed: Observable<[Article]> { mostEmailedSubject }
+    private var mostEmailedSubject = PublishSubject<[Article]>()
+
+    var mostShared: Observable<[Article]> { mostSharedSubject }
+    private var mostSharedSubject = PublishSubject<[Article]>()
+
+    var mostViewed: Observable<[Article]> { mostViewedSubject }
+    private var mostViewedSubject = PublishSubject<[Article]>()
+
+    var favourites: Observable<[Article]> { favouritesSubject }
+    private var favouritesSubject = BehaviorSubject(value: [Article]())
+
     private init() {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         newsServise = NewsAPIService()
@@ -30,12 +41,11 @@ final class NewsViewModel {
         entity.descr = article.description
         entity.url = article.url
         entity.image = article.imageUrl
-
         do {
             try managedObjectContext.save()
             getFavouriteNews()
         } catch {
-            fatalError("Error in saving data")
+            errorSubject.onNext(error)
         }
     }
 
@@ -48,7 +58,7 @@ final class NewsViewModel {
             try managedObjectContext.save()
             getFavouriteNews()
         } catch {
-            favourites.onError(error)
+            errorSubject.onNext(error)
         }
     }
 
@@ -57,33 +67,37 @@ final class NewsViewModel {
         do {
             let entities = try managedObjectContext.fetch(request)
             let articles = entities.map { Article(entity: $0) }
-            favourites.onNext(articles)
+            favouritesSubject.onNext(articles)
         } catch {
-            favourites.onError(error)
+            errorSubject.onNext(error)
         }
     }
 
     func getNewsByCategory(_ category: NewsCathegory) {
-        newsServise.getNewsByCategory(category) { articles, error in
+        newsServise.getNewsByCategory(category) { [weak self] articles, error in
+            if let error {
+                self?.errorSubject.onNext(error)
+            }
             if let articles {
                 switch category {
                 case .emailed:
-                    self.mostEmailed.onNext(articles)
+                    self?.mostEmailedSubject.onNext(articles)
                 case .shared:
-                    self.mostShared.onNext(articles)
+                    self?.mostSharedSubject.onNext(articles)
                 case .viewed:
-                    self.mostViewed.onNext(articles)
-                }
-            } else {
-                switch category {
-                case .emailed:
-                    self.mostEmailed.onError(error!)
-                case .shared:
-                    self.mostShared.onError(error!)
-                case .viewed:
-                    self.mostViewed.onError(error!)
+                    self?.mostViewedSubject.onNext(articles)
                 }
             }
         }
+    }
+
+    func isFavourite(article: Article) -> Bool {
+        var isFavourite: Bool = false
+        let favouritesArticles = try? favouritesSubject.value()
+        if let favouritesArticles {
+            let set = Set(favouritesArticles)
+            isFavourite = set.contains(article)
+        }
+        return isFavourite
     }
 }
