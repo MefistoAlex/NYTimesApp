@@ -15,6 +15,7 @@
 		B05C5FB229257FBD00B1637C /* MostViewedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05C5FB129257FBD00B1637C /* MostViewedViewController.swift */; };
 		B05C5FB4292585EC00B1637C /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05C5FB3292585EC00B1637C /* UIViewController+Extension.swift */; };
 		B07774F829265D1C0021126F /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07774F729265D1C0021126F /* FavouritesViewController.swift */; };
+		B07774FB2927BD490021126F /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07774FA2927BD490021126F /* NewsViewController.swift */; };
 		B099B7592925237C003E54BF /* ArticlesRequestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B099B7582925237C003E54BF /* ArticlesRequestResult.swift */; };
 		B099B75C29252BC3003E54BF /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B099B75B29252BC3003E54BF /* APIManager.swift */; };
 		B099B75E29252BF0003E54BF /* AlamofireAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B099B75D29252BF0003E54BF /* AlamofireAPIManager.swift */; };
@@ -45,6 +46,7 @@
 		B05C5FB129257FBD00B1637C /* MostViewedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostViewedViewController.swift; sourceTree = "<group>"; };
 		B05C5FB3292585EC00B1637C /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		B07774F729265D1C0021126F /* FavouritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
+		B07774FA2927BD490021126F /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		B099B7582925237C003E54BF /* ArticlesRequestResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesRequestResult.swift; sourceTree = "<group>"; };
 		B099B75B29252BC3003E54BF /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		B099B75D29252BF0003E54BF /* AlamofireAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireAPIManager.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 		B05C5FAE29257F4A00B1637C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B07774FA2927BD490021126F /* NewsViewController.swift */,
 				B05C5FA729254ADF00B1637C /* MostEmailedViewController.swift */,
 				B05C5FAF29257F7F00B1637C /* MostSharedViewController.swift */,
 				B05C5FB129257FBD00B1637C /* MostViewedViewController.swift */,
@@ -327,6 +330,7 @@
 				B05C5FA4292549D100B1637C /* ArticleTableViewCell.swift in Sources */,
 				B099B75C29252BC3003E54BF /* APIManager.swift in Sources */,
 				B05C5FB4292585EC00B1637C /* UIViewController+Extension.swift in Sources */,
+				B07774FB2927BD490021126F /* NewsViewController.swift in Sources */,
 				B07774F829265D1C0021126F /* FavouritesViewController.swift in Sources */,
 				B099B7592925237C003E54BF /* ArticlesRequestResult.swift in Sources */,
 				B099B76329253111003E54BF /* Article.swift in Sources */,
