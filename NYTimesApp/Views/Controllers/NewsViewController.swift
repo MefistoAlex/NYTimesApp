@@ -34,11 +34,11 @@ class NewsViewController: UIViewController {
             forCellReuseIdentifier: String(describing: ArticleTableViewCell.self)
         )
 
-        tableView.rx.modelSelected(Article.self).subscribe { article in
+        tableView.rx.modelSelected(Article.self).asDriver().drive { article in
             self.presetnArticle(article)
         }.disposed(by: disposeBag)
 
-        tableView.rx.itemSelected.bind { indexPath in
+        tableView.rx.itemSelected.asDriver().drive { indexPath in
             self.tableView.deselectRow(at: indexPath, animated: true)
         }.disposed(by: disposeBag)
     }
