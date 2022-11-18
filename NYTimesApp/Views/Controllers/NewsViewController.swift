@@ -41,7 +41,7 @@ class NewsViewController: UIViewController {
         tableView.rx.itemSelected.asDriver().drive { indexPath in
             self.tableView.deselectRow(at: indexPath, animated: true)
         }.disposed(by: disposeBag)
-        
+
         Observable.of(
             newsViewModel.mostEmailed,
             newsViewModel.mostShared,
