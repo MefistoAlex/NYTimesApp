@@ -41,6 +41,15 @@ class NewsViewController: UIViewController {
         tableView.rx.itemSelected.asDriver().drive { indexPath in
             self.tableView.deselectRow(at: indexPath, animated: true)
         }.disposed(by: disposeBag)
+        
+        Observable.of(
+            newsViewModel.mostEmailed,
+            newsViewModel.mostShared,
+            newsViewModel.mostViewed,
+            newsViewModel.favourites
+        ).merge().subscribe { _ in
+            self.refreshControl.endRefreshing()
+        }.disposed(by: disposeBag)
     }
 
     func erorrHandling() {
