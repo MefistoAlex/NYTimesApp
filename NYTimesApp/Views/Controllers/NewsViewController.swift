@@ -43,7 +43,12 @@ class NewsViewController: UIViewController {
         }.disposed(by: disposeBag)
     }
 
-    func erorrHandling() {}
+    func erorrHandling() {
+        newsViewModel.newsError.subscribe { error in
+            self.showErrorAlert(with: error)
+            self.refreshControl.endRefreshing()
+        }.disposed(by: disposeBag)
+    }
 
     @objc func refreshTableData() {}
 }

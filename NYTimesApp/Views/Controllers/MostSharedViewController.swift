@@ -21,15 +21,6 @@ final class MostSharedViewController: NewsViewController {
 
     // MARK: - Privates
 
-    override func erorrHandling() {
-        newsViewModel.mostShared.subscribe { event in
-            if let error = event.error {
-                self.showErrorAlert(with: error)
-            }
-            self.refreshControl.endRefreshing()
-        }.disposed(by: disposeBag)
-    }
-
     override func tableBinding() {
         super.tableBinding()
         newsViewModel.mostShared.asDriver(onErrorJustReturn: [Article]())

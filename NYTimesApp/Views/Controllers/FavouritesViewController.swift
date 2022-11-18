@@ -21,16 +21,7 @@ final class FavouritesViewController: NewsViewController {
     }
 
     // MARK: - Privates
-
-    override func erorrHandling() {
-        newsViewModel.favourites.subscribe { event in
-            if let error = event.error {
-                self.showErrorAlert(with: error)
-            }
-            self.refreshControl.endRefreshing()
-        }.disposed(by: disposeBag)
-    }
-
+    
     override func tableBinding() {
         super.tableBinding()
         newsViewModel.favourites.asDriver(onErrorJustReturn: [Article]())
@@ -40,7 +31,7 @@ final class FavouritesViewController: NewsViewController {
                     cell.setArticle(article)
             }.disposed(by: disposeBag)
 
-        tableView.rx.modelDeleted(Article.self).subscribe { article in
+        tableView.rx.modelDeleted(Article.self).asDriver().drive() { article in
             self.newsViewModel.deleteArticleFromFavourites(article)
         }.disposed(by: disposeBag)
     }

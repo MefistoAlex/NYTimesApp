@@ -22,15 +22,6 @@ final class MostEmailedViewController: NewsViewController {
 
     // MARK: - Privates
 
-    override func erorrHandling() {
-        newsViewModel.mostEmailed.subscribe { event in
-            if let error = event.error {
-                self.showErrorAlert(with: error)
-            }
-            self.refreshControl.endRefreshing()
-        }.disposed(by: disposeBag)
-    }
-
     override func tableBinding() {
         super.tableBinding()
         newsViewModel.mostEmailed.asDriver(onErrorJustReturn: [Article]())

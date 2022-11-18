@@ -21,15 +21,6 @@ final class MostViewedViewController: NewsViewController {
 
     // MARK: - Privates
 
-    override func erorrHandling() {
-        newsViewModel.mostViewed.subscribe { event in
-            if let error = event.error {
-                self.showErrorAlert(with: error)
-            }
-            self.refreshControl.endRefreshing()
-        }.disposed(by: disposeBag)
-    }
-
     override func tableBinding() {
         super.tableBinding()
         newsViewModel.mostViewed.asDriver(onErrorJustReturn: [Article]())
