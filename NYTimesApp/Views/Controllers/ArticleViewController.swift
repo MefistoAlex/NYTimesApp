@@ -39,17 +39,7 @@ final class ArticleViewController: UIViewController {
             let url = URL(string: article.url)
             let urlRequest = URLRequest(url: url!)
             webWiew.load(urlRequest)
-
-            let articles = try? newsViewModel.favourites.value()
-            if let articles {
-                let set = Set(articles)
-                isFavourite = set.contains(article)
-            }
-
-            newsViewModel.favourites.subscribe { event in
-                let set = Set(event.element!)
-                self.isFavourite = set.contains(self.article!)
-            }.disposed(by: disposeBag)
+            isFavourite = newsViewModel.isFavourite(article: article)
         }
     }
 
@@ -66,6 +56,7 @@ final class ArticleViewController: UIViewController {
             } else {
                 newsViewModel.addArticleToFavourites(article)
             }
+            isFavourite = !isFavourite
         }
     }
 
