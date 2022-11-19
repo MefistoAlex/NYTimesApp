@@ -38,6 +38,7 @@ final class ArticleViewController: UIViewController {
         if let article {
             let url = URL(string: article.url)
             let urlRequest = URLRequest(url: url!)
+            //webWiew.load() in X-Code 14 generate purple issue, than havent solve yet
             webWiew.load(urlRequest)
             isFavourite = newsViewModel.isFavourite(article: article)
         }
