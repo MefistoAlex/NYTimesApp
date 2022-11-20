@@ -13,25 +13,9 @@ final class MostSharedViewController: NewsViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        newsViewModel = NewsViewModel(category: .shared)
         tableBinding()
         refreshTableData()
         errorHandling()
-    }
-
-    // MARK: - Privates
-
-    override func tableBinding() {
-        super.tableBinding()
-        newsViewModel.mostShared.asDriver(onErrorJustReturn: [Article]())
-            .drive(tableView.rx.items(
-                cellIdentifier: String(describing: ArticleTableViewCell.self),
-                cellType: ArticleTableViewCell.self)) { _, article, cell in
-                    cell.setArticle(article)
-            }.disposed(by: disposeBag)
-    }
-
-    @objc override func refreshTableData() {
-        newsViewModel.getNewsByCategory(.shared)
     }
 }
