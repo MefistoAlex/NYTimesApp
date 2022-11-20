@@ -17,7 +17,7 @@ class NewsViewController: UIViewController {
     // MARK: - Properties
 
     let disposeBag = DisposeBag()
-    let newsViewModel = NewsViewModel.shared
+    var newsViewModel: NewsViewModel?
     lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         refreshControl.accessibilityViewIsModal = true
@@ -34,6 +34,13 @@ class NewsViewController: UIViewController {
             forCellReuseIdentifier: String(describing: ArticleTableViewCell.self)
         )
 
+        newsViewModel?.news.asDriver(onErrorJustReturn: [Article]())
+            .drive(tableView.rx.items(
+                cellIdentifier: String(describing: ArticleTableViewCell.self),
+                cellType: ArticleTableViewCell.self)) { _, article, cell in
+                    cell.setArticle(article)
+            }.disposed(by: disposeBag)
+
         tableView.rx.modelSelected(Article.self).asDriver().drive { article in
             self.presetnArticle(article)
         }.disposed(by: disposeBag)
@@ -42,22 +49,20 @@ class NewsViewController: UIViewController {
             self.tableView.deselectRow(at: indexPath, animated: true)
         }.disposed(by: disposeBag)
 
-        Observable.of(
-            newsViewModel.mostEmailed,
-            newsViewModel.mostShared,
-            newsViewModel.mostViewed,
-            newsViewModel.favourites
-        ).merge().subscribe { _ in
+        newsViewModel?.news.subscribe { _ in
             self.refreshControl.endRefreshing()
         }.disposed(by: disposeBag)
     }
 
-    func erorrHandling() {
-        newsViewModel.newsError.subscribe { error in
+    func errorHandling() {
+        newsViewModel?.newsError.subscribe { error in
             self.showErrorAlert(with: error)
             self.refreshControl.endRefreshing()
         }.disposed(by: disposeBag)
     }
 
-    @objc func refreshTableData() {}
+    @objc func refreshTableData() {
+        newsViewModel?.getNews()
+    }
+    
 }

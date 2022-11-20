@@ -17,7 +17,7 @@ final class ArticleViewController: UIViewController {
 
     // MARK: - Properties
 
-    private let newsViewModel = NewsViewModel.shared
+    private let newsViewModel = FavouritesNewsViewModel.shared
     private let disposeBag = DisposeBag()
     private var article: Article?
     private var isFavourite = false {
