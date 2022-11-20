@@ -13,7 +13,7 @@ final class MostSharedViewController: NewsViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        newsViewModel = MostSharedViewModel()
+        newsViewModel = NewsViewModel(category: .shared)
         tableBinding()
         refreshTableData()
         errorHandling()

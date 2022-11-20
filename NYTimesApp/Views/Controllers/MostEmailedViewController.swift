@@ -14,7 +14,7 @@ final class MostEmailedViewController: NewsViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        newsViewModel = MostEmailedViewModel()
+        newsViewModel = NewsViewModel(category: .emailed)
         tableBinding()
         refreshTableData()
         errorHandling()

@@ -13,7 +13,7 @@ final class MostViewedViewController: NewsViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        newsViewModel = MostViewedViewModel()
+        newsViewModel = NewsViewModel(category: .viewed)
         tableBinding()
         refreshTableData()
         errorHandling()

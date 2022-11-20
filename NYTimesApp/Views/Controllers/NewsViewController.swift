@@ -17,7 +17,7 @@ class NewsViewController: UIViewController {
     // MARK: - Properties
 
     let disposeBag = DisposeBag()
-    var newsViewModel: NewsViewModel?
+    var newsViewModel: ViewModelProtocol?
     lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         refreshControl.accessibilityViewIsModal = true
@@ -64,5 +64,4 @@ class NewsViewController: UIViewController {
     @objc func refreshTableData() {
         newsViewModel?.getNews()
     }
-    
 }
