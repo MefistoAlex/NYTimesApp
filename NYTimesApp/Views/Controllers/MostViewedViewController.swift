@@ -16,7 +16,7 @@ final class MostViewedViewController: NewsViewController {
 
         tableBinding()
         refreshTableData()
-        erorrHandling()
+        errorHandling()
     }
 
     // MARK: - Privates

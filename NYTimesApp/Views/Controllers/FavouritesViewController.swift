@@ -17,7 +17,7 @@ final class FavouritesViewController: NewsViewController {
 
         tableBinding()
         refreshTableData()
-        erorrHandling()
+        errorHandling()
     }
 
     // MARK: - Privates

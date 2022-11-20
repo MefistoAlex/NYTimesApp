@@ -17,7 +17,7 @@ final class MostEmailedViewController: NewsViewController {
 
         tableBinding()
         refreshTableData()
-        erorrHandling()
+        errorHandling()
     }
 
     // MARK: - Privates
