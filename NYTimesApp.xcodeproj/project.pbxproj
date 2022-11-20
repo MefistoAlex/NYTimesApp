@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B003C6F9292AB04100E87646 /* StoredNewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B003C6F8292AB04100E87646 /* StoredNewsService.swift */; };
+		B003C6FD292ABB7E00E87646 /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B003C6FC292ABB7D00E87646 /* NewsViewModel.swift */; };
 		B05C5FA4292549D100B1637C /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05C5FA2292549D100B1637C /* ArticleTableViewCell.swift */; };
 		B05C5FA5292549D100B1637C /* ArticleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B05C5FA3292549D100B1637C /* ArticleTableViewCell.xib */; };
 		B05C5FA829254ADF00B1637C /* MostEmailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05C5FA729254ADF00B1637C /* MostEmailedViewController.swift */; };
-		B05C5FAD29256AEF00B1637C /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05C5FAC29256AEF00B1637C /* NewsViewModel.swift */; };
 		B05C5FB029257F7F00B1637C /* MostSharedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05C5FAF29257F7F00B1637C /* MostSharedViewController.swift */; };
 		B05C5FB229257FBD00B1637C /* MostViewedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05C5FB129257FBD00B1637C /* MostViewedViewController.swift */; };
 		B05C5FB4292585EC00B1637C /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05C5FB3292585EC00B1637C /* UIViewController+Extension.swift */; };
@@ -38,10 +39,11 @@
 		0F00A207207A2CE7CB728B7E /* Pods-NYTimesApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYTimesApp.release.xcconfig"; path = "Target Support Files/Pods-NYTimesApp/Pods-NYTimesApp.release.xcconfig"; sourceTree = "<group>"; };
 		5260AB53A9F0FB895FCF4E79 /* Pods-NYTimesApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYTimesApp.debug.xcconfig"; path = "Target Support Files/Pods-NYTimesApp/Pods-NYTimesApp.debug.xcconfig"; sourceTree = "<group>"; };
 		81212197FCA268F7427FAC52 /* Pods_NYTimesApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NYTimesApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B003C6F8292AB04100E87646 /* StoredNewsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredNewsService.swift; sourceTree = "<group>"; };
+		B003C6FC292ABB7D00E87646 /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
 		B05C5FA2292549D100B1637C /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 		B05C5FA3292549D100B1637C /* ArticleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleTableViewCell.xib; sourceTree = "<group>"; };
 		B05C5FA729254ADF00B1637C /* MostEmailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostEmailedViewController.swift; sourceTree = "<group>"; };
-		B05C5FAC29256AEF00B1637C /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
 		B05C5FAF29257F7F00B1637C /* MostSharedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostSharedViewController.swift; sourceTree = "<group>"; };
 		B05C5FB129257FBD00B1637C /* MostViewedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostViewedViewController.swift; sourceTree = "<group>"; };
 		B05C5FB3292585EC00B1637C /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
@@ -107,7 +109,7 @@
 		B05C5FAB29256AAF00B1637C /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				B05C5FAC29256AEF00B1637C /* NewsViewModel.swift */,
+				B003C6FC292ABB7D00E87646 /* NewsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -141,6 +143,7 @@
 				B099B75F29252CC4003E54BF /* API manager */,
 				B099B7582925237C003E54BF /* ArticlesRequestResult.swift */,
 				B099B76029252DB1003E54BF /* NewsAPIService.swift */,
+				B003C6F8292AB04100E87646 /* StoredNewsService.swift */,
 				B099B76229253111003E54BF /* Article.swift */,
 			);
 			path = Models;
@@ -330,14 +333,15 @@
 				B05C5FA4292549D100B1637C /* ArticleTableViewCell.swift in Sources */,
 				B099B75C29252BC3003E54BF /* APIManager.swift in Sources */,
 				B05C5FB4292585EC00B1637C /* UIViewController+Extension.swift in Sources */,
+				B003C6FD292ABB7E00E87646 /* NewsViewModel.swift in Sources */,
 				B07774FB2927BD490021126F /* NewsViewController.swift in Sources */,
 				B07774F829265D1C0021126F /* FavouritesViewController.swift in Sources */,
 				B099B7592925237C003E54BF /* ArticlesRequestResult.swift in Sources */,
 				B099B76329253111003E54BF /* Article.swift in Sources */,
 				B0A3451B292652FB00CF2994 /* ArticleEntity+CoreDataProperties.swift in Sources */,
+				B003C6F9292AB04100E87646 /* StoredNewsService.swift in Sources */,
 				B099B75E29252BF0003E54BF /* AlamofireAPIManager.swift in Sources */,
 				B099B76529253984003E54BF /* Constants.swift in Sources */,
-				B05C5FAD29256AEF00B1637C /* NewsViewModel.swift in Sources */,
 				B0A345112926344A00CF2994 /* ArticleViewController.swift in Sources */,
 				B0D525162925148700EE71D4 /* NYTimesApp.xcdatamodeld in Sources */,
 				B05C5FB229257FBD00B1637C /* MostViewedViewController.swift in Sources */,

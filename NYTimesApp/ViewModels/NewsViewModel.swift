@@ -1,93 +1,115 @@
 //
-//  NewsViewModel.swift
+//  ViewModel.swift
 //  NYTimesApp
 //
-//  Created by Alexandr Mefisto on 16.11.2022.
+//  Created by Alexandr Mefisto on 20.11.2022.
 //
 
 import CoreData
 import Foundation
 import RxSwift
 
-final class NewsViewModel {
-    private let newsServise: NewsAPIServiceProtocol
-    private let storedNewsService: StoredNewsServiceProtocol
+//MARK: - Bacic class
+class NewsViewModel {
+    fileprivate var category: NewsCategory?
+    fileprivate let newsServise: NewsAPIServiceProtocol
+    fileprivate let storedNewsService: StoredNewsServiceProtocol
     
-    static let shared = NewsViewModel()
-
     var newsError: Observable<Error> { errorSubject }
-    private var errorSubject = PublishSubject<Error>()
+    fileprivate let errorSubject = PublishSubject<Error>()
+    
+    var news: Observable<[Article]> { newsSubject }
+    fileprivate let newsSubject = BehaviorSubject(value: [Article]())
 
-    var mostEmailed: Observable<[Article]> { mostEmailedSubject }
-    private var mostEmailedSubject = PublishSubject<[Article]>()
-
-    var mostShared: Observable<[Article]> { mostSharedSubject }
-    private var mostSharedSubject = PublishSubject<[Article]>()
-
-    var mostViewed: Observable<[Article]> { mostViewedSubject }
-    private var mostViewedSubject = PublishSubject<[Article]>()
-
-    var favourites: Observable<[Article]> { favouritesSubject }
-    private var favouritesSubject = BehaviorSubject(value: [Article]())
-
-    private init() {
+    init() {
         newsServise = NewsAPIService()
         storedNewsService = StoredNewsService()
     }
-
-   
-    func getNewsByCategory(_ category: NewsCategory) {
-        newsServise.getNewsByCategory(category) { [weak self] articles, error in
-            if let error {
-                self?.errorSubject.onNext(error)
-            }
-            if let articles {
-                switch category {
-                case .emailed:
-                    self?.mostEmailedSubject.onNext(articles)
-                case .shared:
-                    self?.mostSharedSubject.onNext(articles)
-                case .viewed:
-                    self?.mostViewedSubject.onNext(articles)
+    
+    func getNews() {
+        if let category {
+            newsServise.getNewsByCategory(category) { [weak self] articles, error in
+                if let error {
+                    self?.errorSubject.onNext(error)
+                }
+                if let articles {
+                    self?.newsSubject.onNext(articles)
                 }
             }
-        }
-    }
-
-    func getFavouriteNews() {
-        do {
-           let articles = try storedNewsService.getFavouriteNews()
-            favouritesSubject.onNext(articles)
-        } catch {
-            errorSubject.onNext(error)
         }
     }
     
     func addArticleToFavourites(_ article: Article) {
         do {
             try storedNewsService.addArticleToFavourites(article)
-            getFavouriteNews()
+            getNews()
         } catch {
-            errorSubject.onNext(error)
+            errorSubject.onError(error)
         }
     }
+    
     func deleteArticleFromFavourites(_ article: Article) {
         do {
             try storedNewsService.deleteArticleFromFavourites(article)
-            getFavouriteNews()
+            getNews()
         } catch {
-            errorSubject.onNext(error)
+            errorSubject.onError(error)
         }
     }
-
     
     func isFavourite(article: Article) -> Bool {
         var isFavourite: Bool = false
-        let favouritesArticles = try? favouritesSubject.value()
+        let favouritesArticles = try? newsSubject.value()
         if let favouritesArticles {
             let set = Set(favouritesArticles)
             isFavourite = set.contains(article)
         }
         return isFavourite
     }
+}
+
+//MARK: -  MostEmailedViewModel
+
+class MostEmailedViewModel: NewsViewModel {
+    override init() {
+        super.init()
+        category = .emailed
+    }
+}
+
+//MARK: - MostSharedViewModel
+class MostSharedViewModel: NewsViewModel {
+    override init() {
+        super.init()
+        category = .shared
+    }
+}
+
+//MARK: - MostViewedViewModel
+
+class MostViewedViewModel: NewsViewModel {
+    override init() {
+        super.init()
+        category = .viewed
+    }
+}
+
+//MARK: -  FavouritesNewsViewModel
+
+class FavouritesNewsViewModel: NewsViewModel {
+    static let  shared = FavouritesNewsViewModel()
+    
+    override private init() {
+    }
+    
+   override func getNews(){
+        do {
+           let articles = try storedNewsService.getFavouriteNews()
+            newsSubject.onNext(articles)
+        } catch {
+            errorSubject.onError(error)
+        }
+    }
+    
+    
 }
