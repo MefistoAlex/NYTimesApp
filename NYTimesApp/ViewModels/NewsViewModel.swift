@@ -36,7 +36,7 @@ final class NewsViewModel {
     }
 
    
-    func getNewsByCategory(_ category: NewsCathegory) {
+    func getNewsByCategory(_ category: NewsCategory) {
         newsServise.getNewsByCategory(category) { [weak self] articles, error in
             if let error {
                 self?.errorSubject.onNext(error)

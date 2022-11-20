@@ -8,7 +8,7 @@
 import Foundation
 
 protocol NewsAPIServiceProtocol {
-    func getNewsByCategory(_ category: NewsCathegory, completion: @escaping (_ articles: [Article]?, _ error: Error?) -> Void)
+    func getNewsByCategory(_ category: NewsCategory, completion: @escaping (_ articles: [Article]?, _ error: Error?) -> Void)
 }
 
 class NewsAPIService: NewsAPIServiceProtocol {
@@ -18,7 +18,7 @@ class NewsAPIService: NewsAPIServiceProtocol {
         apiManager = AlamofireAPIManager()
     }
 
-    func getNewsByCategory(_ category: NewsCathegory, completion: @escaping ([Article]?, Error?) -> Void) {
+    func getNewsByCategory(_ category: NewsCategory, completion: @escaping ([Article]?, Error?) -> Void) {
         apiManager.request(urlString: category.rawValue,
                            method: .get,
                            dataType: ArticlesRequestResult.self,
