@@ -11,7 +11,8 @@ import RxSwift
 
 final class NewsViewModel {
     private let newsServise: NewsAPIServiceProtocol
-    private let managedObjectContext: NSManagedObjectContext
+    private let storedNewsService: StoredNewsServiceProtocol
+    
     static let shared = NewsViewModel()
 
     var newsError: Observable<Error> { errorSubject }
@@ -30,49 +31,11 @@ final class NewsViewModel {
     private var favouritesSubject = BehaviorSubject(value: [Article]())
 
     private init() {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         newsServise = NewsAPIService()
-        managedObjectContext = appDelegate.persistentContainer.viewContext
+        storedNewsService = StoredNewsService()
     }
 
-    func addArticleToFavourites(_ article: Article) {
-        let entity = ArticleEntity(context: managedObjectContext)
-        entity.title = article.title
-        entity.descr = article.description
-        entity.url = article.url
-        entity.image = article.imageUrl
-        do {
-            try managedObjectContext.save()
-            getFavouriteNews()
-        } catch {
-            errorSubject.onNext(error)
-        }
-    }
-
-    func deleteArticleFromFavourites(_ article: Article) {
-        let request = ArticleEntity.fetchRequest()
-        request.predicate = NSPredicate(format: "url = %@", article.url as CVarArg)
-        do {
-            let result = try managedObjectContext.fetch(request)
-            managedObjectContext.delete(result.first!)
-            try managedObjectContext.save()
-            getFavouriteNews()
-        } catch {
-            errorSubject.onNext(error)
-        }
-    }
-
-    func getFavouriteNews() {
-        let request = ArticleEntity.fetchRequest()
-        do {
-            let entities = try managedObjectContext.fetch(request)
-            let articles = entities.map { Article(entity: $0) }
-            favouritesSubject.onNext(articles)
-        } catch {
-            errorSubject.onNext(error)
-        }
-    }
-
+   
     func getNewsByCategory(_ category: NewsCathegory) {
         newsServise.getNewsByCategory(category) { [weak self] articles, error in
             if let error {
@@ -91,6 +54,33 @@ final class NewsViewModel {
         }
     }
 
+    func getFavouriteNews() {
+        do {
+           let articles = try storedNewsService.getFavouriteNews()
+            favouritesSubject.onNext(articles)
+        } catch {
+            errorSubject.onNext(error)
+        }
+    }
+    
+    func addArticleToFavourites(_ article: Article) {
+        do {
+            try storedNewsService.addArticleToFavourites(article)
+            getFavouriteNews()
+        } catch {
+            errorSubject.onNext(error)
+        }
+    }
+    func deleteArticleFromFavourites(_ article: Article) {
+        do {
+            try storedNewsService.deleteArticleFromFavourites(article)
+            getFavouriteNews()
+        } catch {
+            errorSubject.onNext(error)
+        }
+    }
+
+    
     func isFavourite(article: Article) -> Bool {
         var isFavourite: Bool = false
         let favouritesArticles = try? favouritesSubject.value()
