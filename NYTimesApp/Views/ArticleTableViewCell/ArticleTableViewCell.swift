@@ -13,16 +13,17 @@ final class ArticleTableViewCell: UITableViewCell {
 
     @IBOutlet private var newsImageView: UIImageView!
     @IBOutlet private var descriptionLabel: UILabel!
-    @IBOutlet private var titleLabel:
-        UILabel!
+    @IBOutlet private var titleLabel: UILabel!
 
     func setArticle(_ article: Article) {
         titleLabel.text = article.title
         descriptionLabel.text = article.description
         if let imageUrl = article.imageUrl {
             newsImageView.sd_setImage(with: URL(string: imageUrl))
-        } else {
-            newsImageView.image = nil
         }
+    }
+
+    override func prepareForReuse() {
+        newsImageView.image = nil
     }
 }
