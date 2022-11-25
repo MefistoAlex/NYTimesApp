@@ -8,6 +8,9 @@
 import Foundation
 import CoreData
 final class CoreDataStack{
+    static let shared = CoreDataStack()
+   
+    private init() {}
     // MARK: - Core Data stack
 
     lazy var persistentContainer: NSPersistentContainer = {
