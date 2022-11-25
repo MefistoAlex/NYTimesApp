@@ -21,6 +21,8 @@ final class ArticleTableViewCell: UITableViewCell {
         descriptionLabel.text = article.description
         if let imageUrl = article.imageUrl {
             newsImageView.sd_setImage(with: URL(string: imageUrl))
+        } else {
+            newsImageView.image = nil
         }
     }
 }
