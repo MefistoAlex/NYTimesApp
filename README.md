@@ -1,9 +1,9 @@
 # NYTimesApp
 
-# Technologies
-_SWIFT 5
-_MVVM
-_RxSwift
--Alamofire
--CoreData
--KingFisher
+## Used technologies
+- SWIFT 5
+- MVVM
+- RxSwift
+- Alamofire
+- CoreData
+- KingFisher
