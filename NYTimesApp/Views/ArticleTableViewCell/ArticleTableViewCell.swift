@@ -5,7 +5,7 @@
 //  Created by Alexandr Mefisto on 16.11.2022.
 //
 
-import SDWebImage
+import Kingfisher
 import UIKit
 
 final class ArticleTableViewCell: UITableViewCell {
@@ -19,7 +19,8 @@ final class ArticleTableViewCell: UITableViewCell {
         titleLabel.text = article.title
         descriptionLabel.text = article.description
         if let imageUrl = article.imageUrl {
-            newsImageView.sd_setImage(with: URL(string: imageUrl))
+            let url = URL(string: imageUrl)
+            newsImageView.kf.setImage(with: url)
         }
     }
 
