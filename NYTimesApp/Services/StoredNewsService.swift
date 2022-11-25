@@ -19,8 +19,7 @@ class StoredNewsService: StoredNewsServiceProtocol {
     private let managedObjectContext: NSManagedObjectContext
 
     init() {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        managedObjectContext = appDelegate.persistentContainer.viewContext
+        managedObjectContext = CoreDataStack().persistentContainer.viewContext
     }
 
     func getFavouriteNews() throws -> [Article] {

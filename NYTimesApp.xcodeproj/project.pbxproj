@@ -11,6 +11,7 @@
 		B003C6FD292ABB7E00E87646 /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B003C6FC292ABB7D00E87646 /* NewsViewModel.swift */; };
 		B003C705292AE87600E87646 /* FavouritesNewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B003C704292AE87600E87646 /* FavouritesNewsViewModel.swift */; };
 		B003C707292AEFB500E87646 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B003C706292AEFB500E87646 /* ViewModelProtocol.swift */; };
+		B014BF01293106190013A4B9 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B014BF00293106190013A4B9 /* CoreDataStack.swift */; };
 		B05C5FA4292549D100B1637C /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05C5FA2292549D100B1637C /* ArticleTableViewCell.swift */; };
 		B05C5FA5292549D100B1637C /* ArticleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B05C5FA3292549D100B1637C /* ArticleTableViewCell.xib */; };
 		B05C5FA829254ADF00B1637C /* MostEmailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05C5FA729254ADF00B1637C /* MostEmailedViewController.swift */; };
@@ -45,6 +46,7 @@
 		B003C6FC292ABB7D00E87646 /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
 		B003C704292AE87600E87646 /* FavouritesNewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesNewsViewModel.swift; sourceTree = "<group>"; };
 		B003C706292AEFB500E87646 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
+		B014BF00293106190013A4B9 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		B05C5FA2292549D100B1637C /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 		B05C5FA3292549D100B1637C /* ArticleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleTableViewCell.xib; sourceTree = "<group>"; };
 		B05C5FA729254ADF00B1637C /* MostEmailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostEmailedViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +103,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B014BF02293106CD0013A4B9 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B099B75F29252CC4003E54BF /* API manager */,
+				B014BF00293106190013A4B9 /* CoreDataStack.swift */,
+				B003C6F8292AB04100E87646 /* StoredNewsService.swift */,
+				B099B76029252DB1003E54BF /* NewsAPIService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		B05C5FA6292549D900B1637C /* ArticleTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -146,10 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				B0A3451C2926530B00CF2994 /* Entities */,
-				B099B75F29252CC4003E54BF /* API manager */,
 				B099B7582925237C003E54BF /* ArticlesRequestResult.swift */,
-				B099B76029252DB1003E54BF /* NewsAPIService.swift */,
-				B003C6F8292AB04100E87646 /* StoredNewsService.swift */,
 				B099B76229253111003E54BF /* Article.swift */,
 			);
 			path = Models;
@@ -197,6 +207,7 @@
 				B07774F9292687E10021126F /* SupportindFiles */,
 				B0D5250B2925148700EE71D4 /* AppDelegate.swift */,
 				B0D5250D2925148700EE71D4 /* SceneDelegate.swift */,
+				B014BF02293106CD0013A4B9 /* Services */,
 				B099B75A29252383003E54BF /* Models */,
 				B0D525222925158200EE71D4 /* Views */,
 				B05C5FAB29256AAF00B1637C /* ViewModels */,
@@ -349,6 +360,7 @@
 				B0A3451B292652FB00CF2994 /* ArticleEntity+CoreDataProperties.swift in Sources */,
 				B003C6F9292AB04100E87646 /* StoredNewsService.swift in Sources */,
 				B099B75E29252BF0003E54BF /* AlamofireAPIManager.swift in Sources */,
+				B014BF01293106190013A4B9 /* CoreDataStack.swift in Sources */,
 				B099B76529253984003E54BF /* Constants.swift in Sources */,
 				B0A345112926344A00CF2994 /* ArticleViewController.swift in Sources */,
 				B0D525162925148700EE71D4 /* NYTimesApp.xcdatamodeld in Sources */,
