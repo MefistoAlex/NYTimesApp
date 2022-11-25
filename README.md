@@ -3,6 +3,7 @@ App download news articles from NYTimesAPI, viewed them as web page and allow to
 ## Used technologies
 - SWIFT 5
 - MVVM
+- AutoLayout
 - RxSwift
 - Alamofire
 - CoreData
