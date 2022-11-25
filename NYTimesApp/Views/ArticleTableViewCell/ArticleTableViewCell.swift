@@ -24,6 +24,8 @@ final class ArticleTableViewCell: UITableViewCell {
     }
 
     override func prepareForReuse() {
+        titleLabel.text = nil
+        descriptionLabel.text = nil
         newsImageView.image = nil
     }
 }
