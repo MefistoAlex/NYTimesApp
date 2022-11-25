@@ -6,8 +6,7 @@ target 'NYTimesApp' do
   use_frameworks!
 
 pod 'Alamofire'
-pod 'SDWebImage', '~> 5.0'
-
+pod 'Kingfisher', '~> 7.0'
 pod 'RxSwift'
 pod 'RxCocoa'
   # Pods for NYTimesApp
