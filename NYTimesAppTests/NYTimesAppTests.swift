@@ -16,8 +16,8 @@ final class NYTimesAppTests: XCTestCase {
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-    
-    //MARK: - Article testing
+
+    // MARK: - Article testing
 
     func testArticleInitFromEntity() {
         // arrange
@@ -28,40 +28,17 @@ final class NYTimesAppTests: XCTestCase {
         entity.title = "title"
         entity.descr = "abstract"
         entity.image = "image"
-        
+
         // act
         let article = Article(entity: entity)
-        
+
         // assert
         XCTAssertEqual(entity.url, article.url)
         XCTAssertEqual(entity.title, article.title)
         XCTAssertEqual(entity.descr, article.description)
         XCTAssertEqual(entity.image, article.imageUrl)
     }
-    
-    //MARK: - CoreDataStack
-    func testCoreDataStackSaveContext () {
-        // arrange
-        let coreData = CoreDataStack()
-        let moc = coreData.persistentContainer.viewContext
-        let entity = ArticleEntity(context: moc)
-        entity.url = "url"
-        entity.title = "title"
-        entity.descr = "abstract"
-        entity.image = "image"
-        
-        // act
-        coreData.saveContext()
-        
-        // assert
-        let fetchedEntity = moc.object(with: entity.objectID)
-        XCTAssertEqual(entity, fetchedEntity, "Enteties must bee equal")
-         
-        // clear
-        moc.delete(entity)
-        coreData.saveContext()
-        
-    }
+
     func testArticleInitFromIncomingArticle() {
         // arrange
         let mediaMetaData = ArticlesRequestResult.MediaMetaData(url: "image")
@@ -72,10 +49,10 @@ final class NYTimesAppTests: XCTestCase {
             abstract: "abstract",
             media: [media]
         )
-        
+
         // act
         let article = Article(incomingArticle: incomingArticle)
-        
+
         // assert
         XCTAssertEqual(incomingArticle.url, article.url)
         XCTAssertEqual(incomingArticle.title, article.title)
@@ -83,6 +60,54 @@ final class NYTimesAppTests: XCTestCase {
         XCTAssertEqual("image", article.imageUrl)
     }
 
+    // MARK: - CoreDataStack
+
+    func testCoreDataStackSaveContext() {
+        // arrange
+        let coreData = CoreDataStack()
+        let moc = coreData.persistentContainer.viewContext
+        let entity = ArticleEntity(context: moc)
+        entity.url = "url"
+        entity.title = "title"
+        entity.descr = "abstract"
+        entity.image = "image"
+
+        // act
+        coreData.saveContext()
+
+        // assert
+        let fetchedEntity = moc.object(with: entity.objectID)
+        XCTAssertEqual(entity, fetchedEntity, "Enteties must bee equal")
+
+        // clear
+        moc.delete(entity)
+        coreData.saveContext()
+    }
+
+    // MARK: - StoredNewsService
+
+    func testStoredNewsServiceGetFavouritesNews() {
+        let article = Article(
+            title: "test",
+            description: "test",
+            url: "test",
+            imageUrl: "test"
+        )
+        let storedService = StoredNewsService()
+        XCTAssertNoThrow(try storedService.addArticleToFavourites(article),"Shouldn't throw error in adding Articles")
+        var exist: Bool = false
+        XCTAssertNoThrow(exist = try storedService.isArticleExist(article),"Shouldn't throw error in isArticleExist")
+        XCTAssert(exist)
+        var articles = [Article]()
+        XCTAssertNoThrow(articles = try storedService.getFavouriteNews(),"Shouldn't throw error in getting favourites")
+        XCTAssert(articles.count == 1)
+        XCTAssertNoThrow(try storedService.deleteArticleFromFavourites(article), "Shouldn't throw error in deleting favourite Article")
+        XCTAssertNoThrow(articles = try storedService.getFavouriteNews(),"Shouldn't throw error in getting favourites")
+        XCTAssert(articles.count == 0)
+        
+        XCTAssertNoThrow(exist = try storedService.isArticleExist(article),"Shouldn't throw error in isArticleExist")
+        XCTAssert(!exist)
+    }
 
     func testArticleViewControllerSettingArticle() {
         // arrange
