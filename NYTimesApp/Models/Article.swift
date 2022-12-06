@@ -28,4 +28,12 @@ struct Article: Hashable {
         // getting image with hight quality
         imageUrl = entity.image
     }
+    
+    init(title: String, description: String, url: String, imageUrl: String?){
+        self.title =  title
+        self.description = description
+        self.url = url
+        self.imageUrl = imageUrl
+
+    }
 }
