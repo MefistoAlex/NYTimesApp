@@ -86,7 +86,7 @@ final class NYTimesAppTests: XCTestCase {
 
     // MARK: - StoredNewsService
 
-    func testStoredNewsServiceGetFavouritesNews() {
+    func testStoredNewsService() {
         let article = Article(
             title: "test",
             description: "test",
@@ -109,6 +109,22 @@ final class NYTimesAppTests: XCTestCase {
         XCTAssert(!exist)
     }
 
+    //MARK: - NewsAPIService
+    func testNewsAPIService () {
+        let apiService = NewsAPIService()
+        let expectation = expectation(description: "server fetch")
+        apiService.getNewsByCategory(.emailed) { articles, error in
+            XCTAssertNil(error, "must be nil")
+            XCTAssertNotNil(articles, "Shuldn't be nil")
+            if let articles {
+                XCTAssert(articles.count > 0)
+            }
+            expectation.fulfill()
+        }
+        waitForExpectations(timeout: 10.0)
+
+    }
+    
     func testArticleViewControllerSettingArticle() {
         // arrange
         let articleViewController = ArticleViewController()
